@@ -4,21 +4,27 @@ class DisplayData extends React.Component{
 
     render(){
 
-        console.log(this.props.data["EstimatedPopulation"]);
-        let required =[
-            "State",
-            "Location",
-            "EstimatedPopulation",
-            "TotalWages"
-        ];
-        
-        console.log(this.props.data.Lat);
+        // let required =[
+        //     "State",
+        //     "Lat",
+        //     "Long",
+        //     "EstimatedPopulation",
+        //     "TotalWages"
+        // ];
+
+        // {required.map((element) => 
+        //     <h1>{this.props.data[element]}</h1>
+        // )}
         
         return(
             <div>
-                {required.map((element) => 
-                    <h1>{this.props.data[element]}</h1>
-                )}
+                <div id="list-header">{this.props.data["LocationText"]} </div>
+                <ul>
+                    <li className="list-layout">State: {this.props.data["State"]}</li>
+                    <li className="list-layout">Location:( {this.props.data["Lat"]},{this.props.data["Long"]})</li>
+                    <li className="list-layout">Population (Estimated): {this.props.data["EstimatedPopulation"]}</li>
+                    <li className="list-layout">Total Wages: {this.props.data["TotalWages"]}</li>
+                </ul>  
             </div>
         );
     }
