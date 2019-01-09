@@ -8,7 +8,7 @@ class App extends Component {
     <div>
       <h1 id= "header-layout">Zip and City Search</h1>
       <ZipCode />
-
+      
     </div>
     );
   }
