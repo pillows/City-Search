@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "../styles/City.css";
 
 class GetCity extends React.Component{
 
@@ -37,9 +38,12 @@ class GetCity extends React.Component{
         }
 
         return(
-            <div className= "zip-wrapper">         
+            <div id= "zip-wrapper">        
                 {this.state.dataVal.map((element) =>
-                    (<div>{element}</div>)
+                (
+                    <div id="nested-zip-wrapper">
+                    {element}
+                    </div>)
                 )}
             </div>
         );
