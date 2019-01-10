@@ -1,23 +1,12 @@
 import React from "react";
+import "../styles/DisplayData.css";
 
 class DisplayData extends React.Component{
 
     render(){
 
-        // let required =[
-        //     "State",
-        //     "Lat",
-        //     "Long",
-        //     "EstimatedPopulation",
-        //     "TotalWages"
-        // ];
-
-        // {required.map((element) => 
-        //     <h1>{this.props.data[element]}</h1>
-        // )}
-        
         return(
-            <div>
+            <div className="final-render-wrapper">
                 <div id="list-header">{this.props.data["LocationText"]} </div>
                 <ul>
                     <li className="list-layout">State: {this.props.data["State"]}</li>

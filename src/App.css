@@ -1,0 +1,65 @@
+button{
+    outline: none;
+}
+button:hover{
+    cursor: pointer;
+}
+
+#zip-code:focus, #city-name:focus{
+    border-radius: 30px 30px 0 0;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+}
+
+#header-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    height: 200px;    
+    font-size: 4vw; 
+    font-weight: bold;
+    background-color: rgb(43, 43, 43);
+    color: rgba(255, 255, 255, 0.623);
+    padding-bottom: 25px; 
+}
+
+#button-wrapper{
+    display: flex;
+    /*border: 1px solid blue;*/
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+}
+
+.button-layout{
+    font-size: 1.6vw;
+    border: none;
+    padding: 20px 0px;
+    color: rgba(255, 255, 255, 0.623);
+    background-color: rgb(43, 43, 43);
+}
+
+#zip-code{
+    flex: 1;
+    /* background-color: limegreen; */
+}
+
+#city-name{
+    flex:1;
+    /* background-color: purple; */
+}
+
+#form-wrapper{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid green; */
+    margin-top: 50px;
+}
+
+#zip,#city{
+    border-radius: 10px;
+    width: 35%;
+    padding: 10px;
+}

@@ -41,22 +41,20 @@ class App extends Component {
 	render() {
 	return(
 		<div>
-			<div>
-                <button id="zip" onClick={this.handleClick}>Zipcode</button>
-                <button id="city" onClick={this.handleClick}>City</button>
+			<div id="header-layout">Zip-City Search Tool</div>
+			<div id = "button-wrapper">
+                <button id="zip-code" class="button-layout" onClick={this.handleClick}>Zip Code</button>
+                <button id="city-name"  class="button-layout" onClick={this.handleClick}>City</button>
             </div>
-            <div>
-            	{this.state.searchFor === "zip" ?
-	                <label type= "number"> Enter search term:
+            <div id="form-wrapper">
+            	{this.state.searchFor === "zip-code" ?
 	                <input id= "zip" type="number" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a zip code"/>
-	                </label>
+	                
 	            :
-	            	<label type= "text"> Enter search term:
 	                <input id= "city" type="text" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a city"/>
-	                </label>
 				}
 
-				{this.state.searchFor === "zip"? <ZipCode term={this.state.term} startSearching={this.state.startSearching}/>:  <City term={this.state.term} startSearching={this.state.startSearching}/>}
+				{this.state.searchFor === "zip-code"? <ZipCode term={this.state.term} startSearching={this.state.startSearching}/>:  <City term={this.state.term} startSearching={this.state.startSearching}/>}
             </div>
 		</div>
 	);
