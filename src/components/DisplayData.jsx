@@ -8,12 +8,12 @@ class DisplayData extends React.Component{
         return(
             <div className="final-render-wrapper">
                 <div id="list-header">{this.props.data["LocationText"]} </div>
-                <ul>
-                    <li className="list-layout">State: {this.props.data["State"]}</li>
-                    <li className="list-layout">Location:( {this.props.data["Lat"]},{this.props.data["Long"]})</li>
-                    <li className="list-layout">Population (Estimated): {this.props.data["EstimatedPopulation"]}</li>
-                    <li className="list-layout">Total Wages: {this.props.data["TotalWages"]}</li>
-                </ul>  
+            
+                <div className="list-layout" id = "first-row">State: {this.props.data["State"]}</div>
+                <div className="list-layout">Location:( {this.props.data["Lat"]},{this.props.data["Long"]})</div>
+                <div className="list-layout">Population (Estimated): {this.props.data["EstimatedPopulation"]}</div>
+                <div className="list-layout">Total Wages: {this.props.data["TotalWages"]}</div>
+                
             </div>
         );
     }

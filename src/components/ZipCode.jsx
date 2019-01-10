@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DisplayData from "../components/DisplayData"
+import "../styles/DisplayData.css";
 
 class GetCity extends React.Component{
 
@@ -36,7 +37,7 @@ class GetCity extends React.Component{
         }
 
         return(
-            <div>         
+            <div id="card-container-main">         
                 {this.state.dataVal.map((element) =>
                     (<DisplayData data= {element}/>)
                 )}

@@ -43,8 +43,8 @@ class App extends Component {
 		<div>
 			<div id="header-layout">Zip-City Search Tool</div>
 			<div id = "button-wrapper">
-                <button id="zip-code" class="button-layout" onClick={this.handleClick}>Zip Code</button>
-                <button id="city-name"  class="button-layout" onClick={this.handleClick}>City</button>
+                <button id="zip-code" className="button-layout" onClick={this.handleClick}>Zip Code</button>
+                <button id="city-name"  className="button-layout" onClick={this.handleClick}>City</button>
 				<div id="empty-space"></div>
 			</div>
             <div id="form-wrapper">
@@ -54,9 +54,8 @@ class App extends Component {
 	            :
 	                <input id= "city" type="text" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a city"/>
 				}
-
-				{this.state.searchFor === "zip-code"? <ZipCode term={this.state.term} startSearching={this.state.startSearching}/>:  <City term={this.state.term} startSearching={this.state.startSearching}/>}
             </div>
+			{this.state.searchFor === "zip-code"? <ZipCode term={this.state.term} startSearching={this.state.startSearching}/>:  <City term={this.state.term} startSearching={this.state.startSearching}/>}
 		</div>
 	);
 	}
