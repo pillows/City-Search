@@ -1,3 +1,7 @@
+body{
+    background-color: #DDDDCD;
+}
+
 button{
     outline: none;
 }
@@ -6,9 +10,9 @@ button:hover{
 }
 
 #zip-code:focus, #city-name:focus{
-    border-radius: 30px 30px 0 0;
-    background-color: #fff;
-    color: rgb(0, 0, 0);
+    border-radius: 20px 20px 0px 0px;
+    background-color: #DDDDCD;
+    color: #5A665E;
 }
 
 #header-layout{
@@ -19,8 +23,8 @@ button:hover{
     height: 200px;    
     font-size: 4vw; 
     font-weight: bold;
-    background-color: rgb(43, 43, 43);
-    color: rgba(255, 255, 255, 0.623);
+    background-color: #596869;
+    color: #F5F9E9;
     padding-bottom: 25px; 
 }
 
@@ -28,18 +32,23 @@ button:hover{
     display: flex;
     /*border: 1px solid blue;*/
     width: 100%;
-    background-color: rgb(43, 43, 43);
+    background-color: #596869;
 }
 
 .button-layout{
     font-size: 1.6vw;
     border: none;
     padding: 20px 0px;
-    color: rgba(255, 255, 255, 0.623);
-    background-color: rgb(43, 43, 43);
+    color: #F5F9E9;
+    background-color: #596869;
+}
+
+#empty-space{
+    flex:3;
 }
 
 #zip-code{
+    margin-left: 25px;
     flex: 1;
     /* background-color: limegreen; */
 }
@@ -55,10 +64,12 @@ button:hover{
     align-items: center;
     flex-direction: column;
     /* border: 1px solid green; */
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 #zip,#city{
+    
+    background-color: #E8E8DE;
     border-radius: 10px;
     width: 35%;
     padding: 10px;

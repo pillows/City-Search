@@ -45,7 +45,8 @@ class App extends Component {
 			<div id = "button-wrapper">
                 <button id="zip-code" class="button-layout" onClick={this.handleClick}>Zip Code</button>
                 <button id="city-name"  class="button-layout" onClick={this.handleClick}>City</button>
-            </div>
+				<div id="empty-space"></div>
+			</div>
             <div id="form-wrapper">
             	{this.state.searchFor === "zip-code" ?
 	                <input id= "zip" type="number" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a zip code"/>
