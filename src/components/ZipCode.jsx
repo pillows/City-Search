@@ -6,9 +6,8 @@ class GetCity extends React.Component{
 
     constructor(props){
         super(props);
-
         this.state={
-            dataVal: []
+            dataVal: [],
         }
 
         this.fetchData = this.fetchData.bind(this);
@@ -22,23 +21,25 @@ class GetCity extends React.Component{
 
             .then(response =>{
                 this.setState({dataVal: response.data});
-                
             })
 
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err);
+                this.setState({dataVal: []});
+            });
     }
 
-
     render(){
-        console.log(this.state.dataVal);
+        
+        if(this.props.startSearching){
+            this.fetchData();
+        }
 
         return(
-            <div>
-            <button type="submit" onClick={this.fetchData}>Submit</button>
-            
-            {this.state.dataVal.map((element) =>
-                (<DisplayData data= {element}/>)
-            )}
+            <div>         
+                {this.state.dataVal.map((element) =>
+                    (<DisplayData data= {element}/>)
+                )}
             </div>
         );
     }

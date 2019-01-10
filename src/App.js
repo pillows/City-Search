@@ -10,7 +10,8 @@ class App extends Component {
 
 		this.state = {
 			term: '',
-			searchFor: ''
+			searchFor: '',
+			startSearching: false
 		}
 
 		this.handleClick = this.handleClick.bind(this);
@@ -18,8 +19,16 @@ class App extends Component {
 	}
 
 	handleChange(event){
+
+		var search = false;
+
+		if((event.target.value.length === 5 && event.target.id === "zip")|| (event.target.id === "city" && event.target.value.length > 0)){
+			search = true;
+		}
+
 		this.setState({
-			term: event.target.value
+			term: event.target.value,
+			startSearching: search
 		});
 	}
 
@@ -39,16 +48,16 @@ class App extends Component {
             <div>
             	{this.state.searchFor === "zip" ?
 	                <label type= "number"> Enter search term:
-	                <input type="number" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a zip code"/>
+	                <input id= "zip" type="number" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a zip code"/>
 	                </label>
 	            :
 	            	<label type= "text"> Enter search term:
-	                <input type="text" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a city"/>
+	                <input id= "city" type="text" defaultValue={this.state.term} onChange={this.handleChange} placeholder="Enter a city"/>
 	                </label>
-            	}
-            </div>
+				}
 
-            {this.state.searchFor === "zip"? <ZipCode term={this.state.term}/> : <City term={this.state.term}/>}
+				{this.state.searchFor === "zip"? <ZipCode term={this.state.term} startSearching={this.state.startSearching}/>:  <City term={this.state.term} startSearching={this.state.startSearching}/>}
+            </div>
 		</div>
 	);
 	}
